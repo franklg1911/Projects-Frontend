@@ -1,0 +1,860 @@
+/*  La finalidad de poner before - after es que cualquier contenido añadido a través de los pseudo-elementos sigan las mismas reglas que las demás propiedades de la página */
+*,
+::before,
+::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #B9FF66;
+    --color-secundario: #191A23;
+    --gray-color: #F3F3F3;
+
+    --padding-container: 80px 0;
+}
+
+body,
+input,
+textarea,
+button {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+/*
+ 
+    ___ ___  _  _ _____ _   ___ _  _ ___ ___ 
+   / __/ _ \| \| |_   _/_\ |_ _| \| | __| _ \
+  | (_| (_) | .` | | |/ _ \ | || .` | _||   /
+   \___\___/|_|\_| |_/_/ \_\___|_|\_|___|_|_\
+                                             
+ 
+*/
+
+.container {
+    /* Esta propiedad permite que el elemento se ajuste a un 90% del contenedor, se establece un limite máximo de 1200px, esto signfica que en pantallas grandes, el elemento no crecerá más alla de los 1200px */
+    width: min(90%, 1200px);
+
+    /* Para centrar el contenedor */
+    margin: 0 auto;
+
+    /* Lo que se sale del contenido no se verá */
+    overflow: hidden;
+}
+
+/*
+ 
+   _  _ ___ ___  ___  
+  | || | __| _ \/ _ \ 
+  | __ | _||   / (_) |
+  |_||_|___|_|_\\___/ 
+                      
+ 
+*/
+
+.nav {
+    /* Crear una variable para insertar la imagen*/
+    --nav-icon-background: url("../assets/svg/menu-open.svg");
+
+    /* Oculta a un 100% todo el menu de la lista */
+    --transform-list-menu: translate(-100%);
+    display: flex;
+    align-items: center;
+
+    /* Los elementos se van a la esquina */
+    justify-content: space-between;
+    height: 80px;
+}
+
+/* :Has ; Este selector es parte de las nuevas especificaciones de CSS que se utiliza para seleccionar un elemento especifico dentro de él que cumple una condición */
+
+/* En este caso, se selecciona .nav si contiene un elemento .nav__checkbox que está en estado :checked (es decir si esta marcado) */
+
+/* Cuando un elemento .nav contiene un .nav_checkbox marcado (:checked), la variable --nav-icon-background se actualiza con la URL de la imagen de fondo menu-close.svg */
+.nav:has(.nav__checkbox:checked) {
+    --nav-icon-background: url("../assets/svg/menu-close.svg");
+
+    /* Volvemos a mostrar el menu poniendo 0% */
+    --transform-list-menu: translate(0);
+}
+
+.nav__checkbox {
+    /* Oculta el simbolo de checkbox */
+    display: none;
+}
+
+.nav__label, .nav__logo-link {
+    /* Muestra el logo y el icono de hamburguesa */
+    z-index: 100;
+}
+
+.nav__logo-link {
+    text-decoration: none;
+    color: var(--color-secundario);
+    font-size: 1.1rem;
+}
+
+.nav__label {
+    width: 36px;
+    height: 36px;
+    
+    /* Llamar a la imagen para mostrarla en nav_label */
+    background-image: var(--nav-icon-background);
+
+    /* El fondo cubre todo el elemento */
+    background-size: cover;
+    cursor: pointer;
+
+    /* Para que el cambio no sea brusco y demore .4s */
+    transition: background-image .4s;
+}
+
+.nav__list {
+    /* Para sacarlo del flujo */
+    position: absolute;
+
+    /* Ocupará todo el área visible */
+    inset: 0;
+    display: grid;
+    /* Se centra vertical y horizontalmente */
+    place-content: center;
+    gap: 1rem;
+    text-align: center;
+    list-style: none;
+    background-color: #fff;
+    padding: 0;
+
+    /* Ocultamos un 100% todo el menu de la lista */
+    transform: var(--transform-list-menu);
+
+    /* Genera una transición de .5s de ocultar la lista y volver a mostrarlas pulsando el icono de hamburguesa */
+    transition: transform .5s;
+}
+
+.nav__link {
+    /* Para utilizar propiedades de padding */
+    display: inline-block;
+    padding: .8rem .5rem;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav__link--cta {
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+}
+
+.nav__link:hover {
+    text-decoration: underline;
+}
+
+/*
+ 
+   _  _ ___ ___  ___    __  __   _   ___ _  _ 
+  | || | __| _ \/ _ \  |  \/  | /_\ |_ _| \| |
+  | __ | _||   / (_) | | |\/| |/ _ \ | || .` |
+  |_||_|___|_|_\\___/  |_|  |_/_/ \_\___|_|\_|
+                                              
+ 
+*/
+
+.hero__main {
+    padding: 30px 0;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.hero__title {
+    /* Clamp; permite que el tamaño de fuente sea responsivo y se ajuste dinamicamente en función del tamaño de viewport */
+
+    /* 2rem; es el tamaño de fuente mínima que se aplicará  */
+
+    /* 5vw + 1 rem; 5vw es una unidad que representa el 1% del ancho del viewport ; la suma es una expresión que combina los valores haciendo que el tamaño crezca o se disminuya de manera proporcional al ancho de la pantalla */
+
+    /* 2.8rem; es el tamaño de fuente máximo que se aplicará; incluso en pantallas grandes, el tamaño de la fuente no será mayor que 2.8rem */
+    font-size: clamp(2rem, 5vw + 1rem ,2.8rem);
+}
+
+.hero__figure {
+    /* La imagen mide 100% , pero siempre y cuando no sobrepase los 380px */
+    width: min(100%, 380px);
+
+    /* En caso sobrepase que se centre */
+    justify-self: center;
+}
+
+.hero__img {
+    width: 100%;
+}
+
+.hero__paragraph {
+    font-size: 1.2rem;
+
+    /* Separación de linea */
+    line-height: 2;
+}
+
+.hero__cta {
+    background-color: var(--color-secundario);
+    color: white;
+    text-decoration: none;
+    padding: 1rem 0;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+/*
+ 
+   ___ ___ _____   _____ ___ ___ ___  ___ 
+  / __| __| _ \ \ / /_ _/ __|_ _/ _ \/ __|
+  \__ \ _||   /\ V / | | (__ | | (_) \__ \
+  |___/___|_|_\ \_/ |___\___|___\___/|___/
+                                          
+ 
+*/
+
+
+.services {
+    padding: var(--padding-container);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.title__highlight {
+    padding: 6px;
+    border-radius: 6px;
+
+    /* Para que solo ocupen su espacio */
+    display: inline-block;
+    background-color: var(--color-primary);
+}
+
+.paragraph {
+    margin-top: 1.5rem;
+    line-height: 2;
+}
+
+.services__container {
+    margin-top: 3rem;
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax min((300px, 100%), 1fr)); */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.services__article {
+    /* Tamaño minimo de 95% o 450px, esto hara que mida 95% siempre y cuando no pase los 450px */
+    width: min(95%, 450px);
+
+    /* Coloca al medio los elementos */
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    
+    border-radius: 1.5rem;
+    border: 1px solid black;
+    border-bottom-width: 3px;
+}
+
+/* Clases modificadoras para los colores */
+.services__article--gray {
+    background-color: var(--gray-color);
+
+    /* Variable que cambie de valor dependiendo que color tiene  */
+    --color-title: var(--color-primary);
+}
+
+.services__article--yellow {
+    background-color: var(--color-primary);
+    --color-title: white;
+}
+
+.services__article--black {
+    background-color: var(--color-secundario);
+    --color-title: white;
+}
+
+
+.services__title {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.services__span {
+    /* Poner el texto en 2 filas */
+    display: block;
+
+    /* Elimina lo que ocupa el 100% y ocupa el tamaño del texto */
+    width: max-content;
+
+    background-color: var(--color-title);
+    padding: 2px 6px;
+    border-radius: 6px;
+}
+
+.services__content {
+    /* Pasa los elementos hacia la esquina */
+    display: flex;
+
+    /* Pasa los elementos hacia la esquina */
+    justify-content: space-between;
+    
+    /* Alinear en la parte inferior de las imagenes */
+    align-items: flex-end;
+}
+
+.services__link {
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+.services__img {
+    min-width: 80px;
+    max-width: 160px;
+    width: 50%;
+}
+
+/*
+ 
+    ___ _____ _   
+   / __|_   _/_\  
+  | (__  | |/ _ \ 
+   \___| |_/_/ \_\
+                  
+ 
+*/
+
+.cta {
+    margin: 80px 0;
+    background-color: var(--gray-color);
+    border-radius: 10px;
+    padding: 3rem 1rem;
+}
+
+.cta__content {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+}
+
+.cta__texts {
+    display: grid;
+    gap: 1rem;
+}
+
+.cta__links {
+    background-color: var(--color-secundario);
+    padding: 1.3rem 0;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Desaparece la imagen */
+.cta__figure {
+    display: none;
+}
+
+.cta__img {
+    width: 100%;
+}
+
+/*
+ 
+   ___ _   ___  
+  | __/_\ / _ \ 
+  | _/ _ \ (_) |
+  |_/_/ \_\__\_\
+                
+ 
+*/
+
+.faq {
+    padding: 80px 0;
+}
+
+.faq__container {
+    /* Utilizar display grid para emplear el gap y dar espacio entre los elementos hijos */
+    display: grid;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.faq__item {
+    background-color: var(--gray-color);
+    padding: 1.5rem;
+    border-radius: 30px;
+    border: 1px solid black;
+
+    /* Genera un border con ancho de 4px */
+    border-bottom-width: 4px;
+
+    /* Agrega el icono de abrir pregunta */
+    --icon-question-url: url(../assets/svg/open_question.svg);
+}
+
+/* Hace referencia a las etiquetas details y coloca el color al contenido que se muestra adentro */
+.faq__item[open] {
+    background-color: var(--color-primary);
+
+    /* Agrega el icono de cerrar pregunta */
+    --icon-question-url: url(../assets/svg/close-question.svg);
+}
+
+.faq__question {
+    /* Quita el icono de la etiqueta summary que viene por defecto */
+    display: flex;
+
+    /* Centar verticalmente al texto y boton */
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq__question::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-image: var(--icon-question-url);
+
+    /* Coloca a la derecha el icono */
+    margin-left: auto;
+}
+
+.faq__title {
+    font-size: 1.2rem;
+    width: 60%;
+}
+
+.faq__answer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top  : 1px solid black;
+}
+
+/*
+ 
+    ___ ___  _  _ _____ _   ___ _____ 
+   / __/ _ \| \| |_   _/_\ / __|_   _|
+  | (_| (_) | .` | | |/ _ \ (__  | |  
+   \___\___/|_|\_| |_/_/ \_\___| |_|  
+                                      
+ 
+*/
+
+.contact {
+    padding: 80px 0;
+}
+
+.contact__content {
+    margin-top: 3rem;
+    background-color: var(--gray-color);
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+
+    display: grid;
+    gap: 2rem;
+}
+
+.contact__figure {
+    /* Oculta la imagen en dipositivos moviles */
+    display: none;
+}
+
+
+.contact__img {
+    width: 100%;
+}
+
+
+.contact__form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.contact__label {
+    /* Pone los input uno debajo del otro */
+    display: grid;
+    gap: .3rem;
+}
+
+
+.contact__input,
+.contact__area {
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.contact__area {
+    width: 100%;
+    height: 120px;
+    
+    /* Para que el icono de agrandar text-area se deshabilite  */
+    resize: none;
+}
+
+.contact__submit {
+    background-color: #000;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+}
+
+
+/*
+ 
+   ___ ___   ___ _____ ___ ___ 
+  | __/ _ \ / _ \_   _| __| _ \
+  | _| (_) | (_) || | | _||   /
+  |_| \___/ \___/ |_| |___|_|_\
+                               
+ 
+*/
+
+.footer {
+    background-color: var(--color-secundario);
+}
+
+.footer__content {
+    color: white;
+    padding: 80px 0;
+
+    /* Que mida 90% pero que es 90% no rebase los 1200px */
+    width: min(90%, 1200px);
+
+    /* Se centre horizontalmente */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.footer__main {
+    display: grid;
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.footer__logo-link {
+    text-decoration: none;
+    color: var(--gray-color);
+    font-size: 1.2rem;
+}
+
+.footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.footer__link {
+    color: white;
+    text-decoration: none;
+
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+.footer__copy {
+    justify-self: center;
+    background-color: var(--color-primary);
+    color: var(--color-secundario);
+    font-weight: 500;
+    padding: 4px;
+    border-radius: 6px;
+}
+
+
+.footer__contact {
+    max-width: 250px;
+    display: grid;
+    gap: 1.3rem;
+    color: white;
+    text-align: center;
+}
+
+
+.footer__newsletter {
+    width: min(100%, 400px);
+    padding: 2rem 1.5rem;
+    background-color: #292a32;
+    border-radius: 10px;
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: 48px 48px;
+}
+
+.footer__email {
+    border: 1px solid white;
+    border-radius: 6px;
+    padding: 0 1.5rem;
+    background-color: transparent;
+    color: white;
+}
+
+.footer__email::placeholder {
+    color: white;
+}
+
+
+.footer__submit {
+    background-color: var(--color-primary);
+    color: var(--color-secundario);
+    border: none;
+    border-radius: 6px;
+}
+
+
+.footer__social {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1rem;
+}
+
+.footer__social-links {
+    width: 36px;
+    height: 36px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__copyright {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #fff;
+}
+
+.footer__copyright-text {
+    text-align: center;
+}
+
+
+/*
+ 
+   ___ ___ ___ ___  ___  _  _ ___ _____   _____ 
+  | _ \ __/ __| _ \/ _ \| \| / __|_ _\ \ / / __|
+  |   / _|\__ \  _/ (_) | .` \__ \| | \ V /| _| 
+  |_|_\___|___/_|  \___/|_|\_|___/___| \_/ |___|
+                                                
+ 
+*/
+
+/* Se activa cuando el viewport mida mas de o igual que 780px */
+@media (width >= 768px) {
+
+    /* Hero */
+    .hero__main {
+        padding: var(--padding-container);
+        gap: 1rem;
+
+        /* Los elementos se centren horizontalmente */
+        align-items: center;
+
+        /* Las columnas se vayan hacia la esquina y no se junten  */
+        justify-content: space-between;
+
+        /* Las columnas miden 50% y la segunda columna 45% */
+        grid-template-columns: 50% 45%;
+
+        /* Crear áreas */
+        grid-template-areas:
+        /* La primera columna sera para el titulo y la segunda para la img */
+        "titulo img"
+        /* La primera columna sera para el parrafo y la segunda para la img */
+        "parrafo img"
+        /* La primera columna sera para el link y la segunda para la img */
+        "link img";
+    }
+
+    .hero__title {
+        /* Se le asigna los nombres de grid-template-areas */
+        grid-area: titulo;
+    }
+
+    .hero_paragraph {
+        /* Se le asigna los nombres de grid-template-areas */
+        grid-area: parrafo;
+    }
+
+    .hero__cta {
+        /* Se le asigna los nombres de grid-template-areas */
+        grid-area: link;
+        padding: 1rem 2rem;
+
+        /*  */
+        place-self: start;
+    }
+
+    .hero__figure {
+        /* Se le asigna los nombres de grid-template-areas */
+        grid-area: img;
+    }
+
+    /* cta */
+
+    .cta__content {
+        align-items: center;
+
+        /* Los elementos se van a la esquina */
+        justify-content: space-between;
+
+        grid-template-columns: 45% 45%;
+    }
+
+    .cta__links {
+        padding: 1.3rem 2rem;
+        place-self: start;
+    }
+
+    /* Aparece la imagen */
+    .cta__figure {
+        display: block;
+    }
+
+    /* Contact */
+
+    .contact__content {
+
+        /* Creamos columnas la primera de 50% y la 2da de 40% */
+        grid-template-columns: 50% 40%;
+
+        /* Se van a la esquina */
+        justify-content: space-between;
+
+        /* Alineamos verticalemente */
+        align-items: center;
+
+    }
+
+    .contact__figure {
+        display: block;
+    }
+
+}
+
+
+
+/* Se activa cuando el width del viewport sea mayor a 900px */
+@media (width >= 900px) {
+
+    /* Hero */
+    .nav {
+        /* Al poner esto cuando el viewport sea mayor a 900px se mostrara el menu de navegación */
+        --transform-list-menu: translate(0);
+    }
+
+    .nav__label {
+        /* Oculta el menu de navegación */
+        display: none;
+    }
+
+    .nav__list {
+        /* Muestra los elementos del menu de navegacion */
+        position: static;
+
+        /* El flujo de la grid sea en columna para poner los elementos uno del lado del otro  */
+        grid-auto-flow: column;
+
+        /* Poner en su valor original */
+        place-content: unset;
+        gap: 1rem;
+    }
+
+    /* Footer */
+
+    .footer {
+        background-color: #fff;
+    }
+
+    .footer__content {
+        border-radius: 30px 30px 0 0;
+        background-color: #191A23;
+    }
+
+    .footer__main {
+        width: 90%;
+        margin: 0 auto;
+        grid-template-columns: 1fr 55% 1fr;
+        grid-template-areas:
+            "logo links media"
+            "contact news news";
+        justify-items: start;
+    }
+
+    .footer__links {
+        grid-area: links;
+        
+        width: 100%;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .footer__copy {
+        margin-top: 0rem;
+    }
+
+    .footer__copy {
+        justify-self: start;
+    }
+
+    .footer__contact {
+        grid-area: contact;
+
+        text-align: left;
+        max-width: 300;
+    }
+
+    .footer__newsletter {
+        grid-area: news;
+        align-self: start;
+        justify-self: end;
+    }
+
+    .footer__email {
+        border: 1px solid #fff;
+        border-radius: 6px;
+        padding: 0 1.5rem;
+        background-color: transparent;
+        color: white;
+    }
+
+    .footer__email::placeholder {
+        color: white;
+    }
+
+    .footer__submit {
+        background-color: var(--color-primary);
+        color: var(--color-secundario);
+        border: none;
+        border-radius: 6px;
+    }
+
+    .footer__social {
+        grid-area: media;
+        justify-self: end;
+    }
+
+    
+    .footer__copyright {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
