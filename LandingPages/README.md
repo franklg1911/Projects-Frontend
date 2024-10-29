@@ -1,21 +1,7 @@
-# LANDING PAGES REPOSITORY
+# LANDING PAGES
 
-¡Bienvenido a mi repositorio de landing pages 👋! Esta sección se trata de una colección de proyectos web personales y profesionales, centrados en la creación de páginas web de destino modernas, atractivas, con capacidad de atraer a diversos clientes del mundo y
+Esta sección se trata de una colección de proyectos web personales y profesionales, centrados en la creación de páginas web de destino modernas, atractivas, con capacidad de atraer a diversos clientes del mundo y
 compatibles con tecnologías de programación (HTML, CSS, JavaScript, etc).
-
-### Tabla de contenido
-
-- [Acerca de](#Acerca-de)
-- [Proyectos](#Proyectos)
-
-### Acerca de
-
-Este repositorio contiene diferentes conjuntos de páginas diseñadas y desarrolladas como parte de mi trayectoria en el desarrollo web junior. Cada proyecto mostrado demustra diferentes visualizaciones de programación.
-
-- Diseños reponsivos
-- Manejo contenido dinámico
-- Técnicas de diseño moderno (Flexbox - Grid)
-- Seguimiento de una sección de colores
 
 ### Proyectos
 
