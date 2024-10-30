@@ -1,0 +1,120 @@
+/* Google font - Nunito */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --primario: #0D1117;
+    --secundario: #F2F2F2;
+
+    --padding-container: 80px 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+
+body {
+    background-color: var(--secundario);
+}
+
+.container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/*
+ 
+   _  _ ___   _   ___  ___ ___ 
+  | || | __| /_\ |   \| __| _ \
+  | __ | _| / _ \| |) | _||   /
+  |_||_|___/_/ \_\___/|___|_|_\
+                               
+ 
+*/
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0;
+}
+
+.nav__logo {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.nav__logo-title {
+    color: var(--primario);
+    font-size: 1.25rem;
+}
+
+.nav__menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.nav__link {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--primario);
+}
+
+.nav__link:hover {
+    text-decoration: underline;
+}
+
+.nav__button {
+    padding: .5rem 1rem;
+    background-color: var(--primario);
+    color: var(--secundario);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.nav__button:hover {
+    background-color: #333;
+}
+
+.hero__main {
+    padding: var(--padding-container);
+    text-align: center;
+}
+
+.hero__text {
+    color: var(--primario);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+}
+
+.hero__title {
+    color: var(--primario);
+    font-size: clamp(2rem, 5vw + 1rem, 2.8rem);
+    margin-bottom: .5rem;
+}
+
+.hero__description {
+    color: var(--primario);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.hero__figure {
+    width: min(100%, 1200px);
+    justify-self: center;
+}
+
+.hero__img {
+    width: 100%;
+}
