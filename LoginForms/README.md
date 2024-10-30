@@ -7,14 +7,14 @@ compatibles con tecnologías de programación (HTML, CSS, JavaScript, etc).
 
 A continuación se muestra una lista de proyectos subidos en este repositorio:
 
-- **Login - 1**
+1. **Login**
 
-  - **Descripción**: Es una página web básica diseñada con **HTML5 Y CSS3** responsive con un fondo atractivo para resaltar el contenedor del formulario con dos input de usuario, contraseña y un botón de ingresar.
+   - **Descripción**: Es una página web básica diseñada con **HTML5 Y CSS3** responsive con un fondo atractivo para resaltar el contenedor del formulario con dos input de usuario, contraseña y un botón de ingresar.
 
-- **Login - 2**
+2. **Login**
 
-  - **Descripción**: Es una página web diseñada con **HTML5 Y CSS3** responsive con un fondo de un color sólido y diversas interacciones como iniciar sesión con una cuenta google o apple.
+   - **Descripción**: Es una página web diseñada con **HTML5 Y CSS3** responsive con un fondo de un color sólido y diversas interacciones como iniciar sesión con una cuenta google o apple.
 
-- **Login - 3**
+3. **Login**
 
-  - **Descripción**: Es una página web diseñada diseñada con **HTML5 Y CSS3** responsive enfocada en mostrar un inicio de sesión único y transparente , con diferentes inicios de sesión como facebook o google.
+   - **Descripción**: Es una página web diseñada diseñada con **HTML5 Y CSS3** responsive enfocada en mostrar un inicio de sesión único y transparente , con diferentes inicios de sesión como facebook o google.

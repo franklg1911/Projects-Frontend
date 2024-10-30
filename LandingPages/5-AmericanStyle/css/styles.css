@@ -1,0 +1,1196 @@
+/* Google fonts - Moderustic */
+@import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap');
+
+:root {
+    --primary-color: #c7a17a;
+    --background-color: #f9f5f0;
+    --dark-color: #151515;
+}
+
+html {
+    /* Transforme 10px a porcentaje para toda la página web */
+    font-size: 62.5%;
+    font-family: "Moderustic", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+.##.....##.########.####.##.......####.########.....###....########..########..######.
+.##.....##....##.....##..##........##..##.....##...##.##...##.....##.##.......##....##
+.##.....##....##.....##..##........##..##.....##..##...##..##.....##.##.......##......
+.##.....##....##.....##..##........##..##.....##.##.....##.##.....##.######....######.
+.##.....##....##.....##..##........##..##.....##.#########.##.....##.##.............##
+.##.....##....##.....##..##........##..##.....##.##.....##.##.....##.##.......##....##
+..#######.....##....####.########.####.########..##.....##.########..########..######.
+*/
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.heading-1 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+/*
+.##.....##.########....###....########..########.########....
+.##.....##.##.........##.##...##.....##.##.......##.....##...
+.##.....##.##........##...##..##.....##.##.......##.....##...
+.#########.######...##.....##.##.....##.######...########....
+.##.....##.##.......#########.##.....##.##.......##...##.....
+.##.....##.##.......##.....##.##.....##.##.......##....##....
+.##.....##.########.##.....##.########..########.##.....##...
+*/
+.container-hero {
+    background-color: var(--background-color);
+}
+
+.hero {
+    /* Coloca el elemento de manera flexible y sencilla de manejar */
+    display: flex;
+    /* Distribuye de manera equitativa los elementos */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.customer-support {
+    display: flex;
+    align-items: center;
+    /* Genera un espacio entre los elementos */
+    gap: 2rem;
+}
+
+.customer-support i {
+    font-size: 3.3rem;
+}
+
+.content-customer-support {
+    display: flex;
+    /* Coloca los elementos en columna */
+    flex-direction: column;
+}
+
+.container-logo {
+    display: flex;
+    align-items: center;
+    /* 0.5rem es igual a la mitad de 1rem es decir tendra 8px */
+    gap: .5rem;
+}
+
+.container-logo i {
+    font-size: 2.5rem;
+}
+
+.container-logo h1 a {
+    text-decoration: none;
+    color: #000;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.container-user {
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.container-user .fa-user {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    padding-right: 2.5rem;
+    border-right: 1px solid #e2e2e2;
+}
+
+.container-user .fa-basket-shopping {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    padding-left: 1rem;
+}
+
+.content-shopping-cart {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-navbar {
+    background-color: var(--primary-color);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.navbar .fa-bars {
+    /* Oculta el elemento */
+    display: none;
+}
+
+.menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu li {
+    /* Elimina el estilo de los "li" */
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    /* Se emplea para posicionar un elemento en relación con su posición original en el flujo normal del documento para luego utilizarlo en el menu a::after colocando el position:absolute*/
+    position: relative;
+}
+
+/* Se utiliza para insertar un contenido generado después del contenido real del enlace "a" */
+.menu a::after {
+    content: '';
+    width: 1.5rem;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    /* Estas propiedades especifican cuán lejos se moverá el elemento en el eje X (horizontal) y el eje Y (vertical); es decir mueve el elemento hacia la izquierda en un 50% de su ancho; mueve el elemento hacia abajo en un 50% de su propia altura */
+    transform: translate(-50%, 50%);
+    opacity: 0;
+    /* Se aplicará una transición suave de 0.3s a todas las propiedades cuando se cambien */
+    transition: all .3s ease;
+}
+
+.menu a:hover::after {
+    /* Cuando el usuario pase el cursor sobre el enlace, la línea debajo de él se vuelve completamente visible debido a la opacidad cambia de 0 a 1 */
+    opacity: 1;
+}
+
+.menu a:hover {
+    /* Cuando el usuario pasa el cursor sobre el enlace el texto del enlace cambia a blanco */
+    color: #fff;
+}
+
+.search-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    background-color: #fff;
+    height: 4.4rem;
+    /* La propiedad overflow:hidden hace que cualquier contenido que desborde sea recortado y no se muestre fuera del área definida del contenedor */
+    overflow: hidden;
+}
+
+.search-form input {
+    outline: none;
+    font-family: inherit;
+    border: none;
+    width: 25rem;
+    font-size: 1.4rem;
+    /* Se aplicará arriba y abajo 0 , y a los costados 2rem */
+    padding: 0 2rem;
+    color: #777;
+    cursor: pointer;
+}
+
+/* Este pseudo-elemento hace referencia al botón de "x" cuando el usuario escribe dentro del input */
+.search-form input::-webkit-search-cancel-button {
+    /* Borra el "x" del input */
+    appearance: none;
+}
+
+.search-form .btn-search {
+    border: none;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.btn-search i {
+    font-size: 2rem;
+    color: #fff;
+}
+
+/*
+.########.....###....##....##.##....##.########.########.
+.##.....##...##.##...###...##.###...##.##.......##.....##
+.##.....##..##...##..####..##.####..##.##.......##.....##
+.########..##.....##.##.##.##.##.##.##.######...########.
+.##.....##.#########.##..####.##..####.##.......##...##..
+.##.....##.##.....##.##...###.##...###.##.......##....##.
+.########..##.....##.##....##.##....##.########.##.....##
+*/
+.banner {
+    /* Esta propiedad combina dos fondos diferentes en un solo elemento un degradado lineal y una imagen; 100deg define la dirección del degradado es decir que se aplicara en una angulo de 100 grados hacia la derecha y hacia abajo; #000000 es el primer color del degradado que es negro puro; #00000020 es el segundo color del degradado, que también es negro pero con un nivel de transpariencia de 20 */
+    background-image: linear-gradient(100deg, #000000, #00000020), url('../img/banner/banner.jpg');
+    height: 60rem;
+    /*Esta propiedad hace que la imagen de fondo se escale para cubrir completamente el contenedor. Esto significa que la imagen se agrandará o reducirá.   */
+    background-size: cover;
+    background-position: center;
+}
+
+.content-banner {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 25rem 0;
+}
+
+.content-banner p {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.content-banner h2 {
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 500;
+    /* Define la altura de la línea , es decir 1.2 es un valor relativo significa que la altura sera 1.2 veces del tamaño de su fuente */
+    line-height: 1.2;
+}
+
+.content-banner a {
+    margin-top: 2rem;
+    text-decoration: none;
+    color: var(--dark-color);
+    background-color: var(--primary-color);
+    /* Se le coloca esta propiedad porque no tiene un tamaño; significa que puede estar uno al lado del otro en la misma línea y no interrumpen el flujo de otros elementos en línea */
+    display: inline-block;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    border-radius: 3rem;
+}
+
+/*
+.##.....##....###....####.##....##.....######...#######..##....##.########.########.##....##.########
+.###...###...##.##....##..###...##....##....##.##.....##.###...##....##....##.......###...##....##...
+.####.####..##...##...##..####..##....##.......##.....##.####..##....##....##.......####..##....##...
+.##.###.##.##.....##..##..##.##.##....##.......##.....##.##.##.##....##....######...##.##.##....##...
+.##.....##.#########..##..##..####....##.......##.....##.##..####....##....##.......##..####....##...
+.##.....##.##.....##..##..##...###....##....##.##.....##.##...###....##....##.......##...###....##...
+.##.....##.##.....##.####.##....##.....######...#######..##....##....##....########.##....##....##...
+*/
+
+.main-content {
+    background-color: var(--background-color)
+}
+
+/*
+.########.########....###....########.##.....##.########..########..######.
+.##.......##.........##.##......##....##.....##.##.....##.##.......##....##
+.##.......##........##...##.....##....##.....##.##.....##.##.......##......
+.######...######...##.....##....##....##.....##.########..######....######.
+.##.......##.......#########....##....##.....##.##...##...##.............##
+.##.......##.......##.....##....##....##.....##.##....##..##.......##....##
+.##.......########.##.....##....##.....#######..##.....##.########..######.
+*/
+.container-features {
+    /* Define al contenedor como un contenedor de cuadrícula, signfica que todos los elementos hijos se organizarán en cuadrículas  */
+    display: grid;
+    /* Define cómo se estructurarán las columnas dentro del contenedor de cuadrícula , en la que "4" indica cuantas columnas habrá y "1fr" significa que cada columna ocupará la fracción del espacio disponible */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    padding: 3rem 0;
+}
+
+.card-feature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: #fff;
+    padding: 1.5rem 0;
+}
+
+.card-feature i {
+    font-size: 2.7rem;
+    color: var(--primary-color);
+}
+
+.feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.feature-content span {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--dark-color);
+}
+
+.feature-content p {
+    color: #777;
+    font-weight: 500;
+}
+
+/*
+..######.....###....########.########..######....#######..########..####....###.....######.
+.##....##...##.##......##....##.......##....##..##.....##.##.....##..##....##.##...##....##
+.##........##...##.....##....##.......##........##.....##.##.....##..##...##...##..##......
+.##.......##.....##....##....######...##...####.##.....##.########...##..##.....##..######.
+.##.......#########....##....##.......##....##..##.....##.##...##....##..#########.......##
+.##....##.##.....##....##....##.......##....##..##.....##.##....##...##..##.....##.##....##
+..######..##.....##....##....########..######....#######..##.....##.####.##.....##..######.
+*/
+
+.top-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.container-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.card-category {
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    gap: 2rem;
+}
+
+.category-casual {
+    background-image: linear-gradient(#00000080, #00000080), url('../img/productos/casual.jpg');
+    background-size: cover;
+    /* Esta propiedad determina si y como se repite una imagen de fondo, no repeat es un valor de la propiedad que indica que la imagen de fondo no se repetirá */
+    background-repeat: no-repeat;
+}
+
+.category-deportivo {
+    background-image: linear-gradient(#00000080, #00000080), url('../img/productos/shirt.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.category-oficina {
+    background-image: linear-gradient(#00000080, #00000080), url('../img/productos/oficina.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.card-category p {
+    font-size: 2.5rem;
+    color: #fff;
+    /* Cada palabra iniciará con mayúscula */
+    text-transform: capitalize;
+    /* Se pone position relative para que en "after" pongamos position absolute para que funcione */
+    position: relative;
+}
+
+.card-category p::after {
+    content: '';
+    width: 2.5rem;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.card-category span {
+    font-size: 1.6rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.card-category span:hover {
+    color: var(--primary-color);
+}
+
+/*
+.########..#######..########.....########..########...#######..########..##.....##..######..########..######.
+....##....##.....##.##.....##....##.....##.##.....##.##.....##.##.....##.##.....##.##....##....##....##....##
+....##....##.....##.##.....##....##.....##.##.....##.##.....##.##.....##.##.....##.##..........##....##......
+....##....##.....##.########.....########..########..##.....##.##.....##.##.....##.##..........##.....######.
+....##....##.....##.##...........##........##...##...##.....##.##.....##.##.....##.##..........##..........##
+....##....##.....##.##...........##........##....##..##.....##.##.....##.##.....##.##....##....##....##....##
+....##.....#######..##...........##........##.....##..#######..########...#######...######.....##.....######.
+*/
+.top-products {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.container-options {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.container-options span {
+    color: #777;
+    background-color: #fff;
+    padding: .7rem 3rem;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.container-options span:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Concatena span con el active "span.active" */
+.container-options span.active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* PRODUCTS  */
+.container-products {
+    display: grid;
+    /* La función repeat() repite un patrón de columnas, autofit es el valor dinámico que se ajusta automáticamente el número de columnas que caben en el contenedor, minmax(20rem, 1fr) esta función define el tamaño mínimo y máximo de las columnas , 20rem es el tamaño mínimo que puede tener una columna, 1fr es el tamaño máximo de la columna, que ocupa una fracción del espacio disponible en el contenido "fr" */
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 3rem;
+}
+
+.card-product {
+    background-color: #fff;
+    padding: 2rem 3rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.container-img {
+    /* Posición padre para luego utilizar el position absolute */
+    position: relative;
+}
+
+.container-img img {
+    width: 100%;
+}
+
+
+.container-img .discount {
+    position: absolute;
+    left: 0;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 2px 1.2rem;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Esta propiedad hace que al pasar el cursor por el card product el elemento .discount se ponga de fondo negro */
+.card-product:hover .discount {
+    background-color: #000;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* El contenedor se puede mover libremente dentro de su contenedor padre usando las propiedades de posicionamiento */
+    position: absolute;
+    top: 0;
+    right: -3rem;
+    /* Coloca al contenedor detras de todos los elementos que tienen "z-index" mayor o igual a 0 es decir se oculta */
+    z-index: -1;
+    /* Define una transición suave cuando cambian las propiedades CSS , "all" aplica la transición a todas las propiedades que cambien , ".4s" define la duración de la transición , "ease" aplica la función de temporización que comienza lentamente, acelera al medio , y luego desacelera al final creando un efecto de suavidad */
+    transition: all .4s ease;
+}
+
+.button-group span {
+    border: 1px solid var(--primary-color);
+    padding: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+.button-group span:hover {
+    background-color: var(--primary-color);
+}
+
+.button-group span i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Esta propiedad hace que al pasar el cursor por los button group el elemento i se ponga de color blanco */
+.button-group span:hover i {
+    color: #fff;
+}
+
+
+.card-product:hover .button-group {
+    /* Cuando el usuario pasa el cursor sobre .card-producto el z-index del contenedor .button-group cambia a "0", esto mueve el .button-group visualmente al mismo nivel que otros elementos que tiene el z-index: 0 o menor, es decir se mostrará los botones */
+    z-index: 0;
+    right: -1rem;
+}
+
+
+.content-card-product {
+    /* Permite que los elementos hijos dentro del contenedor se organicen en filas y columnas, de acuerdo a las reglas que se establezcan en las siguientes propiedades */
+    display: grid;
+    /* Alinea los elementos hijos horizontalmente dentro de cada celda */
+    justify-items: center;
+    /* Crea dos columnas, cada una ocupando una fracción igual del espacio disponible en el contenedor 'fr' */
+    grid-template-columns: 1fr 1fr;
+    /* Esta función crea 4 filas, min-content establece el tamaño de la fila al mínimo requerido para que el contenido dentro de esa fila quepa sin desbordarse, si el contenido de la fila es muy pequeño, la fila se ajustará para ser tan pequeña como sea posible */
+    grid-template-rows: repeat(4, min-content);
+    /* Separación de filas */
+    row-gap: 1rem;
+}
+
+.stars {
+    /* La propiedad hace referencia al 1/2 donde significa que comienza en la primera fila de la cuadrícula y se extiende hasta el inicio de la segunda fila pero no la ocupa; el 1/-1 significa que el elemento comenzará en la primera columna de la cuadrícula y se extenderá hasta la última columna, ocupando todas las columnas disponibles  */
+    grid-row: 1/2;
+    grid-column: 1/-1;
+}
+
+.stars i {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.content-card-product h3 {
+    grid-row: 2/3;
+    grid-column: 1/-1;
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.content-card-product h3:hover {
+    color: var(--primary-color);
+}
+
+.add-cart {
+    /* Alinea el elemento hijo al inicio es decir al borde de la izquierda de su celda */
+    justify-self: start;
+    border: 2px solid var(--primary-color);
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-cart:hover {
+    background-color: var(--primary-color);
+}
+
+.add-cart i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.add-cart:hover i{
+    color: #fff;
+}
+
+.content-card-product .price {
+    /* Alinea el elemento al final con "end" de forma horizontal */
+    justify-self: end;
+    /* Centrar verticalmente */
+    align-items: center;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.content-card-product .price span {
+    font-size: 1.5rem;
+    font-weight: 400;
+    /* Genera un tachado al texto */
+    text-decoration: line-through;
+    color: #777;
+    margin-left: .5rem;
+}
+
+
+/*
+..######......###....##.......##.......########.########..##....##
+.##....##....##.##...##.......##.......##.......##.....##..##..##.
+.##.........##...##..##.......##.......##.......##.....##...####..
+.##...####.##.....##.##.......##.......######...########.....##...
+.##....##..#########.##.......##.......##.......##...##......##...
+.##....##..##.....##.##.......##.......##.......##....##.....##...
+..######...##.....##.########.########.########.##.....##....##...
+*/
+.gallery {
+    /* Convierte al elemento en un grid conteiner lo que significa que los elementos hijos de este contenedor se organizarán en cuadricula */
+    display: grid;
+    /* Define las estructuras de la cuadricula , significa que habrá 4 columnas y cada una ocupara 1 fracción */
+    grid-template-columns: repeat(4, 1fr);
+    /* Establece la estructura de las filas en la cuadrícula, significa que habrá 2 filas  y cada una tendrá 30rem */
+    grid-template-rows: repeat(2, 30rem);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-img-3 {
+    /* Significa que el elemento comenzará en la columna 2 y se extenderá hasta la columna 4 (abarcando las columnas 2 y la 3) */
+    grid-column: 2/4;
+    /* Significa que el elemento comenzará en la fila 1 y se extenderá hasta la fila 3 abarcando las filas (1-2) */
+    grid-row: 1/3;
+}
+
+/* ESPECIALES */
+
+.specials {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/*
+.########..##........#######...######....######.
+.##.....##.##.......##.....##.##....##..##....##
+.##.....##.##.......##.....##.##........##......
+.########..##.......##.....##.##...####..######.
+.##.....##.##.......##.....##.##....##........##
+.##.....##.##.......##.....##.##....##..##....##
+.########..########..#######...######....######.
+*/
+.blogs {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.container-blogs {
+    /* Establece los elementos en cuadriculas */
+    display: grid;
+    /* Genera 3 columnas con una fración de 1 */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.card-blog {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card-blog .container-img {
+    border-radius: 2rem;
+    cursor: pointer;
+    /* Se esta utilizando para que los elementos hijos de .container-img que tenga position:absolute se posicionen en relación con .container-img, esto nos da un control más preciso sobre la ubicación de estos elementos dentro del contenedor */
+    position: relative;
+    /* Es una propiedad útil cuando necesites controlar el desbordamiento del contenido dentro de su contenedor, ocultar elementos desbordantes, evitar barras de desplazamiento no deseadas o crear efectos visuales específicos */
+    overflow: hidden;
+}
+
+.button-group-blog {
+    position: absolute;
+    bottom: 1.5rem;
+    right: -2.5rem;
+
+    display: flex;
+    gap: 0.7rem;
+    /* Negativo para ocultar los iconos y cuando se pase por el cursor en hover mostrará los iconos */
+    z-index: -1;
+    transition: all .3s ease;
+}
+
+.card-blog:hover .button-group-blog {
+    /* Para que se muestre los iconos al pasar el cursor */
+    z-index: 0;
+    right: 1.5rem;
+}
+
+.button-group-blog span {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 50%;
+    transition: all .4s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-group-blog span i {
+    font-size: 1.3rem;
+}
+
+.button-group-blog span:hover {
+    background-color: var(--primary-color);
+}
+
+.button-group-blog span:hover i {
+    color: #fff;
+}
+
+.content-blog h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.7rem;
+    color: var(--dark-color);
+    font-weight: 500;
+}
+
+.content-blog h3:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.content-blog p {
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    color: #777;
+}
+
+.content-blog span {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.btn-read-more {
+    padding: 1rem 3rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    border-radius: 2rem;
+    margin: 3rem 0 5rem;
+    /* Se usa para alinear elementos como botones o iconos en una fila , donde necesitamos el control sobre sus dimensiones y márgenes */
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-read-more:hover {
+    background-color: var(--dark-color);
+}
+
+/*
+.########..#######...#######..########.########.########.
+.##.......##.....##.##.....##....##....##.......##.....##
+.##.......##.....##.##.....##....##....##.......##.....##
+.######...##.....##.##.....##....##....######...########.
+.##.......##.....##.##.....##....##....##.......##...##..
+.##.......##.....##.##.....##....##....##.......##....##.
+.##........#######...#######.....##....########.##.....##
+*/
+
+
+.footer {
+    background-color: var(--primary-color);
+}
+
+.container-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 3rem;
+}
+
+.menu-footer {
+    display: grid;
+    /* Crear 3 columnas con una fracción de 1fr , la cuarta columna tiene un tamaño fijo de 30rem */
+    grid-template-columns: repeat(3, 1fr) 30rem;
+    gap: 3rem;
+    justify-items: center;
+}
+
+.title-footer {
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.contact-info,
+.information,
+.my-account,
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-info ul,
+.information ul,
+.my-account ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-info ul li,
+.information ul li,
+.my-account ul li {
+    list-style: none;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.information ul li a,
+.my-account ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+}
+
+.information ul li a:hover,
+.my-account ul li a:hover {
+    color: var(--dark-color);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icons span {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icons span i {
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.twitter {
+    background-color: #000;
+}
+
+.youtube {
+    background-color: #c4302b;
+}
+
+.pinterest {
+    background-color: #c8232c;
+}
+
+.instagram {
+    background: linear-gradient(45deg, #833AB4, #FD1D1D, #FCB045);
+}
+
+.content p {
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 300;
+}
+
+.content input {
+    outline: none;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #d2b495;
+    cursor: pointer;
+    padding: 0.5rem 1.2rem;
+    color: var(--dark-color);
+    /* Para que ocupe todo el espacio */
+    display: block;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+    width: 100%;
+    /* Es una propiedad útil para asegurar que un elemento use la misma familia tipográfica que su contenedor */
+    font-family: inherit;
+}
+
+/* Es un pseudo-elemento que específico para navegadores basados en webkit (como chrome - safari) que se utiliza par aplicar estilos al texto del marcador de posición dentro de los campos de entrada */
+.content input::-webkit-input-placeholder {
+    color: #eee;
+}
+
+.content button {
+    border: none;
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    font-family: inherit;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.content button:hover {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+.copyright {
+    display: flex;
+    /* Distribuye los elementos de modo que el primer elemento esté alineado al principio del contenedor , el último elemento esté alineado al final y el espacio restante se distribuya uniformemente entre los elementos. */
+    justify-content: space-between;
+    padding-top: 2rem;
+    border-top: 1px solid #d2b495;
+}
+
+.copyright p {
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+
+/*
+.########..########..######..########...#######..##....##..######..####.##.....##.########
+.##.....##.##.......##....##.##.....##.##.....##.###...##.##....##..##..##.....##.##......
+.##.....##.##.......##.......##.....##.##.....##.####..##.##........##..##.....##.##......
+.########..######....######..########..##.....##.##.##.##..######...##..##.....##.######..
+.##...##...##.............##.##........##.....##.##..####.......##..##...##...##..##......
+.##....##..##.......##....##.##........##.....##.##...###.##....##..##....##.##...##......
+.##.....##.########..######..##.........#######..##....##..######..####....###....########
+*/
+
+/* MEDIA QUERIES 768px */
+
+@media (max-width: 768px) {
+    html {
+        /* Por defecto esta a 62.5% */
+        font-size: 55%;
+    }
+
+    .hero {
+        padding: 2rem;
+    }
+
+    .customer-support {
+        /* Oculta el elemento completamente, no ocupa espacio en el diseño */
+        display: none;
+    }
+
+    .content-shopping-cart {
+        display: none;
+    }
+
+    .navbar {
+        padding: 1rem 2rem;
+    }
+
+    .navbar .fa-bars {
+        /* Muestra el elemento como un bloque, ocupa todo el ancho disponible y comienza con una nueva línea */
+        display: block;
+        color: #fff;
+        font-size: 3rem;
+    }
+    
+    .menu {
+        display: none;
+    }
+
+    .content-banner {
+        max-width: 50rem;
+        margin: 0 auto;
+        padding: 25rem 0;
+    }
+
+    .container-features {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 3rem 2rem;
+    }
+
+    .card-feature {
+        padding: 2rem;
+    }
+
+    .heading-1 {
+        font-size: 2.4rem;
+    }
+
+    .card-category {
+        height: 12rem;
+    }
+
+    .card-category p {
+        font-size: 2rem;
+        text-align: center;
+        /* Establece la altura de una linea sea igual al tamaño de la fuente del texto */
+        line-height: 1;
+    }
+
+    .card-category span {
+        font-size: 1.4rem;
+    }
+
+    .container-options {
+        align-items: center;
+    }
+
+    .container-options span {
+        text-align: center;
+        padding: 1rem 2rem;
+    }
+
+    .container-products {
+        /* repeat(auto-fit: crea un número automático de columnas basado en el espacio disponible del contenedor, la palabra auto-fit indica que el navegador debe crear tantas columnas como sea posible encajen en el contenedor; minmax(28rem, 1fr: Define el tamaño de las columnas, cada columna tendra un tamaño mínimo de 28rem y un tamaño máximo de 1fr  */
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    }
+
+    .gallery {
+        /* Crea 2 filas con una altura de 15rem, la función repeat simplifica la repetición de valores */
+        grid-template-rows: repeat(2, 15rem);
+    }
+
+    .container-blogs {
+        /* Ocultar */
+        overflow: hidden;
+        /* Genera 2 columnas */
+        grid-template-columns: 1fr 1fr;
+        height: 52rem;
+    }
+
+    /* Crea dos columnas con fracción de 1 */
+    .menu-footer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .copyright {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem
+    }
+}
+
+
+/* MEDIA QUERIES 468px */
+@media (max-width: 468px) {
+    html {
+        font-size: 42.5%;
+    }
+
+    .content-banner {
+        max-width: 50rem;
+        padding: 22rem 0;
+    }
+
+    .heading-1 {
+        font-size: 2.8rem;
+    }
+
+    .card-feature {
+        flex-direction: column;
+        border-radius: 2rem;
+    }
+
+    .feature-content {
+        align-items: center;
+    }
+
+    .feature-content {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .feature-content span {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .container-options span {
+        font-size: 1.8rem;
+        padding: 1rem 1.5rem;
+        font-weight: 500;
+    }
+
+    .container-products {
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 1rem;
+    }
+
+    .container-img .discount {
+        font-size: 1.3rem;
+    }
+
+    .content-card-product h3 {
+        font-size: 2.2rem;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 20rem);
+    }
+
+    .blogs {
+        padding: 2rem;
+    }
+
+    .container-blogs {
+        grid-template-columns: 1fr;
+        height: 80rem;
+    }
+
+    .content-blog h3 {
+        font-size: 2.4rem;
+    }
+
+    .content-blog span {
+        font-size: 1.8rem;
+    }
+
+    .content-blog p {
+        font-size: 2.2rem;
+    }
+
+    .btn-read-more {
+        font-size: 1.8rem;
+    }
+
+    .container-info ul,
+    .information ul,
+    .my-account ul {
+        display: none;
+    }
+
+    .contact-info {
+        align-items: center;
+    }
+
+    .menu-footer {
+        grid-template-columns: 1fr;
+    }
+
+    .content p {
+        font-size: 1.6rem;
+    }
+}
