@@ -301,3 +301,45 @@ body {
     font-weight: 300;
     font-size: .9rem;
 }
+
+/*
+ 
+   ___ ___ ___ ___  ___  _  _ ___ _____   _____ 
+  | _ \ __/ __| _ \/ _ \| \| / __|_ _\ \ / / __|
+  |   / _|\__ \  _/ (_) | .` \__ \| | \ V /| _| 
+  |_|_\___|___/_|  \___/|_|\_|___/___| \_/ |___|
+                                                
+ 
+*/
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 767px) {
+   
+    /* HEADER */
+
+    .nav {
+       flex-direction: column;
+       gap: 1rem;
+       margin: 1rem 0;
+       font-size: .9rem;
+    }
+
+    .nav__button {
+        display: none;
+    }
+
+    .hero__main {
+        padding: 30px 0;
+    }
+
+    /* FOOTER */
+
+    .footer__info {
+        flex-direction: column;
+    }
+
+    .footer__menu {
+        gap: 2rem;
+    }
+}
