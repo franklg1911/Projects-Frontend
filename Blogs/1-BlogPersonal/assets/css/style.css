@@ -17,6 +17,11 @@
 
 body {
     background-color: var(--secundario);
+    opacity: 1;
+    background-image: radial-gradient(#292929 0.1px, transparent 0.1px), radial-gradient(#292929 0.1px, #FFFFFF 1px);
+    background-size: 28px 28px;
+    background-position: 0 0, 14px 14px;
+    
 }
 
 .container {
@@ -72,7 +77,8 @@ body {
 }
 
 .nav__button {
-    padding: .5rem 1rem;
+    padding: .7rem 1rem;
+    font-size: 1rem;
     background-color: var(--primario);
     color: var(--secundario);
     border-radius: 5px;
@@ -117,4 +123,78 @@ body {
 
 .hero__img {
     width: 100%;
+}
+
+
+/*
+ 
+   __  __   _   ___ _  _ 
+  |  \/  | /_\ |_ _| \| |
+  | |\/| |/ _ \ | || .` |
+  |_|  |_/_/ \_\___|_|\_|
+                         
+ 
+*/
+
+/* INFORMATION */
+
+.information {
+    padding: var(--padding-container);
+}
+
+.information__title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.information__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+    gap: 2rem;
+}
+
+.information__card {
+    width: 100%;
+    height: auto;
+}
+
+.information__img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: .5rem;
+}
+
+.information__date {
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.information__headline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.information__paragraph {
+    text-align: justify;
+    font-weight: 300;
+    font-size: .9rem;
+    margin-bottom: 1.5rem;
+}
+
+.information__link {
+    padding: .5rem 2rem;
+    text-decoration: none;
+    color: var(--primario);
+    font-weight: 700;
+    border-radius: 3rem;
+    border: 1.5px solid var(--primario);
+    transition: all .3s;
+}
+
+.information__link:hover {
+    background-color: var(--primario);
+    color: var(--secundario);
 }
