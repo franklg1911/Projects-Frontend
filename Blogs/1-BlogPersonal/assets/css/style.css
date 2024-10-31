@@ -198,3 +198,106 @@ body {
     background-color: var(--primario);
     color: var(--secundario);
 }
+
+/*
+ 
+   ___ ___   ___ _____ ___ ___ 
+  | __/ _ \ / _ \_   _| __| _ \
+  | _| (_) | (_) || | | _||   /
+  |_| \___/ \___/ |_| |___|_|_\
+                               
+ 
+*/
+
+.footer {
+    background-color: var(--primario);
+    padding: var(--padding-container);
+    
+}
+
+.footer__content {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+.footer__title {
+    color: var(--secundario);
+    font-size: 2rem;
+    margin-bottom: .5rem;
+}
+
+.footer__description {
+    font-size: 1rem;
+    color: var(--secundario);
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.footer__cta {
+    padding: .7rem 2rem;
+    text-decoration: none;
+    color: var(--primario);
+    background-color: var(--secundario);
+    font-weight: 700;
+    border-radius: 3rem;
+    transition: all .3s;
+}
+
+.footer__cta:hover {
+    background-color: #333;
+    color: var(--secundario);
+}
+
+.footer__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+}
+
+.footer__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+    text-align: center;
+}
+
+.footer__link {
+    text-decoration: none;    
+    color: var(--secundario);
+    font-weight: 300;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+.footer__copy {
+    margin-top: 3.5rem;
+    position: relative;
+}
+
+.footer__copy::before {
+    content: "";
+    display: block;
+    height: 2px;
+    margin: 0 auto 25px auto;
+    background-color: var(--secundario);
+}
+
+.footer__icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer__copyright {
+    color: var(--secundario);
+    font-weight: 300;
+    font-size: .9rem;
+}
