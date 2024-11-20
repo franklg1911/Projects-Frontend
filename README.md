@@ -37,7 +37,12 @@ A continuación se muestra una lista de página subidas en este repositorio:
 
    - **Descripción**: Proyectos de blogs que contienen información y contenido variado. Cada blog se centra en un tema específico y está diseñado para ser atractivo, con una interfaz de usuario amigable que fomenta la lectura y la interacción.
 
+4. **Calcuadora**
+
+   - **Descripción**: Proyectos de realización de calculadoras en la que se puede realizar diversas operaciones matemáticas desde sencillas a complejas ingresadas por el usuario.
+
 ### Tecnologías
 
 - HTML5
 - CSS3
+- JS
